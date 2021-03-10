@@ -1,0 +1,46 @@
+article {
+  padding: 30px;
+  color: $darkGreyBlue;
+  @include medq($break-m) {
+    flex-basis: 60%;
+  }
+}
+
+.article {
+  &_title {
+    font-weight: 700;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  &_content {
+    color: $darkBlue;
+  }
+  &_social {
+    @include flex($dir: row, $just: space-between);
+    margin-top: 30px;
+    width: 100%;
+    &_image {
+      background-image: url("../images/avatar-michelle.jpg");
+      background-size: contain;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+    }
+    &_name {
+      @include flex($dir: column);
+      flex-basis: 60%;
+    }
+    &_share {
+      background: url("../images/icon-share.svg") 50% 40% no-repeat;
+      background-color: $lightBlue;
+      background-size: 40% 40%;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+    }
+  }
+}
+
+.name {
+  font-weight: 700;
+}
