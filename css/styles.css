@@ -409,6 +409,10 @@ ul {
   list-style: none;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #ecf2f8;
   font-family: "Manrope", Arial, Helvetica, sans-serif;
@@ -445,6 +449,12 @@ p {
   bottom: 0;
 }
 
+.share {
+  color: #8b99ac;
+  letter-spacing: 4px;
+  font-size: 1.1em;
+}
+
 .banner {
   background: url("../images/drawers.jpg") 50% 50% no-repeat;
   background-size: cover;
@@ -453,19 +463,36 @@ p {
 }
 @media (min-width: 768px) {
   .banner {
-    flex-basis: 40%;
+    flex-basis: 50%;
     height: 100%;
     border-radius: 10px 0px 0px 10px;
   }
 }
 
+.article_social_share_buttons img {
+  margin: 0px 20px;
+  width: 28px;
+  height: 28px;
+}
+.article_social_share_buttons img:hover {
+  cursor: pointer;
+}
+
+.invert_svg {
+  fill: #fff;
+}
+
 article {
+  position: relative;
   padding: 30px;
   color: #48556a;
 }
 @media (min-width: 768px) {
   article {
-    flex-basis: 60%;
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
@@ -474,14 +501,24 @@ article {
   font-size: 1.5em;
   margin-bottom: 20px;
 }
+@media (min-width: 768px) {
+  .article_title {
+    font-size: 2em;
+  }
+}
 .article_content {
   color: #6d7f97;
+}
+@media (min-width: 768px) {
+  .article_content {
+    font-size: 1.3em;
+  }
 }
 .article_social {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 30px;
+  margin: 30px 0px -15px 0px;
   width: 100%;
 }
 .article_social_image {
@@ -497,16 +534,43 @@ article {
   flex-basis: 60%;
 }
 .article_social_share {
-  background: url("../images/icon-share.svg") 50% 40% no-repeat;
   background-color: #ecf2f8;
   background-size: 40% 40%;
   height: 40px;
   width: 40px;
   border-radius: 50%;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.article_social_share_buttons {
+  width: 100%;
+  height: 0;
+  left: 0;
+  bottom: 0;
+  padding-left: 20px;
+  overflow: hidden;
+  position: absolute;
+  background-color: #48556a;
+  border-radius: 0px 0px 10px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .name {
   font-weight: 700;
+}
+
+.show {
+  height: 80px;
+  z-index: 1000;
+}
+
+.social_change {
+  background-color: #6d7f97;
 }
 
 /*# sourceMappingURL=styles.css.map */
